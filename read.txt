@@ -1,0 +1,45 @@
+librerias requests y beautifulSoup
+selenio y scrapy frameworks para extraer informacion
+robots.txt que nno se va a permitir consultar en mi pagina web
+xpath (web scraping sandbox), para saber si un sitio web lo permite agregamos al link
+/robots.txt
+
+Expresiones   $x('/') todo o salto entre nodos // 
+$x('//hi') todos los de tipoi hi
+$x('//hi/a/text()').map(x => x.wholeText) extrae texto
+$x('//span/..') seleciona todos por encima de span
+@class trae todo los de tipo class el @ trae un atributo
+
+Pedicados  $x('/html/body/div/div [1]') primer div de la lista de consulta 
+$x('//span[@class="text"]/text') trae los textos 
+
+$x('//hi')
+
+Wilcards = comodines
+Ejemplos
+
+$x('/') <- Trae todo el documento porque representa la raíz de nuestro el html
+$x('/*') <- * después de / pide que traiga todos los nodos que están debajo de / (* es el primer wildcard)
+$x('/html/*') <- Trae todos los nodos que están inmediatamente después de html
+$x('//*') <- // es la expresión para saltar todos los niveles y con el * en todas las direcciones. Trae todos los nodos y todos los atributos de estos nodos.
+$x('//span[@class="text]/@*') <- Trae todos los span, que tengan como clase “text”, con @* trae todos los atributos. Dicho de otra forma, trae todos los atributos de todos los nodos de tipo span de clase “text”.
+$x('/html/body//div/@*') <- Todos los atributos (usando @*) de todos los div (usando //div) que están después de body
+$x('//span[@class="text" and @itemprop="text"]/node()') <- Trae todos los spam que sean de clase “text” que tengan un atributo @itemprop “text” y de ahí (usando node()) traer todo lo que esté dentro de los spam que cumplen las condiciones
+
+node() a diferencia de * trae no solamente los nodos, sino también todo el contenido
+
+$x('//small[@class="author" and starts-with(.,"A")]/text()').map(x => x.wholeText)
+#Devuelve (4) ["Albert Einstein", "Albert Einstein", "Albert Einstein", "André Gide"]
+
+$x('//small[@class="author" and contains(., "g")]/text()').map(x => x.wholeText)
+#Devuelve ["J.K. Rowling"]
+
+py -m venv venv   crea entorno virtual
+venv\Scripts\activate activa el entorno
+pip install requests lxml autopep8 
+py -m install pip --upgrade si esta desactualizado
+
+    from openpyxl import Workbook
+    wb = Workbook()
+    hoja = wb.active
+    hoja.title = "hoja1"

@@ -1,0 +1,18 @@
+https://www.aodfinder.org/parishes?__hstc=227631426.717ac726bfb3dd1685dc12d93c3d2368.1676306872078.1677012115480.1677166806890.3&__hssc=227631426.2.1677166806890&__hsfp=3547924738
+url principal
+
+$x('//div[@class="finder-results"]//@id').map(x => x.value)
+para los id
+
+https://www.aodfinder.org/parishes/####
+
+
+
+$x('//h2[@class="place-meta-title"]//text()').map(x => x.wholeText)
+nombre
+$x('//p[@class="place-meta"]//text()').map(x => x.wholeText)
+dir y tel
+$x('//a[@class="place-meta"]//@href').map(x => x.value)
+url
+$x('//div[@class="clergy"]//text()').map(x => x.wholeText)
+staff

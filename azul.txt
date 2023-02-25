@@ -1,0 +1,64 @@
+ nombre de todas las iglesias catolicas de michigan con su correo electronico, numero de celular, direccion, codigo postal y personas que lo administran
+Dataframe from Detroit with email, celphone, direction, postal code and administration people
+
+$x('//div[@class="javo_somw_list"]/text()').map(x => x.wholeText) para encontrar las direcciones
+$x('//div[@class="javo_somw_list"]/strong/text()').map(x => x.wholeText) los nombres
+$x('//div[@class="row javo_somw_list_inner"]/a/@href').map(x => x.value) correos
+
+        response = requests.get(HOME_URL)
+        
+        if response.status_code == 200:
+            home = response.content.decode('utf-8')
+            parsed = html.fromstring(home)
+    
+            links_to_notices = parsed.xpath(XPATH_LINK_TO_ARTICLE)
+            print(len(links_to_notices))
+            print(links_to_notices)
+
+
+$x('//div[@class="linkContainer"]/a[@class="urlLink"]/@href').map(x => x.value)   extrae la url
+$x('//div[@class="title"]/*/text()').map(x => x.wholeText) datos menos el numero tel
+
+$x('//div[@class="field-content"]/text()').map(x => x.wholeText)
+$x('//span[@class="field-content"]/text()').map(x => x.wholeText)
+
+2do nombres
+
+$x('//span[@class="phone"]/text()').map(x => x.wholeText)
+$x('//div[@class="name"]/text()').map(x => x.wholeText)
+
+-------------------------------------------------------------------------
+https://www.saginaw.org/churches
+link principal
+saginaw
+$x('//div[@class="item-list item-list--blazy item-list--blazy-column"]//a/@href').map(x => x.value)
+url para ver la info
+
+$x('//h1[@class="field-content"]/text() ').map(x => x.wholeText)
+iglesia
+$x('//div[@class="views-field views-field-field-email"]//a/@href ').map(x => x.value)
+solo mail
+$x('//div[@class="views-field views-field-field-phone"]//a/@href ').map(x => x.value)
+solo tel
+$x('//div[@class="views-field views-field-field-website"]//a/@href ').map(x => x.value)
+web
+$x('//a[@target="_new"]/text()').map(x => x.wholeText)
+direccion
+$x('//div[@class="directory"]//strong/text()').map(x => x.wholeText)
+nombres
+
+--
+
+$x('//div[@class="directory"]//p/text()').map(x => x.wholeText) cargos 
+$x('//div[@class="views-row"]//a/@href ').map(x => x.value)
+info sucia
+----------------------------------------------------------------------------
+
+$x('//a[@target="_blank"]/@href ').map(x => x.value)
+
+$x('//h4[@id="myModalLabel"]//@href ').map(x => x.value)
+lik
+
+
+
+
